@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import HomePage from './components/HomePage';
 import CardsDetail from './components/CardsDetail';
+import { Route, Switch } from 'react-router-dom';
 
 class App extends React.Component {
 	constructor(props) {
@@ -52,13 +53,29 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="App">
-				<HomePage
-					people={this.state.people.data}
-					isFetching={this.state.people.isFetching}
-					value={this.state.filters.value}
-					handleChange={this.handleChange}
-				/>
-				<CardsDetail />
+				<Switch>
+					<Route
+						exact
+						path="/"
+						render={() => (
+							<HomePage
+								people={this.state.people.data}
+								isFetching={this.state.people.isFetching}
+								value={this.state.filters.value}
+								handleChange={this.handleChange}
+							/>
+						)}
+					/>
+					<Route
+						path="/people/:peopleId"
+						render={routerProps => (
+							<CardsDetail
+								match={routerProps.match}
+								people={this.state.people.data}
+							/>
+						)}
+					/>
+				</Switch>
 			</div>
 		);
 	}

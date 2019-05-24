@@ -6,7 +6,9 @@ class CardsDetail extends React.Component {
     this.state = {  }
   } */
 	render() {
-		return <p> </p>;
+		console.log(this.props.match);
+		console.log(this.props.people);
+		return <p> :)</p>;
 	}
 }
 

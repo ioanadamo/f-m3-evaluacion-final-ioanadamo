@@ -1,6 +1,7 @@
 import React from 'react';
 import { Fragment } from 'react';
 import Card from './Card';
+import { Link } from 'react-router-dom';
 
 class List extends React.Component {
 	/*  constructor(props) {
@@ -16,9 +17,13 @@ class List extends React.Component {
 						person.name.toUpperCase().includes(value.toUpperCase())
 					)
 					.map(person => (
-						<li key={person.id}>
-							<Card person={person} />
-						</li>
+						<ul>
+							<li key={person.id}>
+								<Link to={`/people/${person.id}`}>
+									<Card person={person} />
+								</Link>
+							</li>
+						</ul>
 					))}
 			</Fragment>
 		);
