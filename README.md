@@ -1,5 +1,25 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+[x]primero crear componentes
+
+carpeta para cada componente – y en cada carpeta un index js y un style.css
+
+[x]y importar todo, madre hijos y tal
+
+[x]pintar los componentes – una frase para cada uno- tipo soy home
+
+hacer la peticion y guardar en el estado
+
+pasar props al componente list para pintar la lista
+
+pintar filtros y controlarlos
+
+filtrar
+
+pintar los inputs y boton para añadir controlarlos
+
+añadir a la lista lo que se indica en el input
+
 ## Available Scripts
 
 In the project directory, you can run:

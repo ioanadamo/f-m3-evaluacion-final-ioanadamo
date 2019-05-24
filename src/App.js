@@ -1,8 +1,21 @@
 import React from 'react';
 import './App.css';
+import HomePage from './components/HomePage';
+import CardsDetail from './components/CardsDetail';
 
-function App() {
-	return <div className="App">Hola</div>;
+class App extends React.Component {
+	constructor(props) {
+		super(props);
+	}
+
+	render() {
+		return (
+			<div className="App">
+				<HomePage />
+				<CardsDetail />
+			</div>
+		);
+	}
 }
 
 export default App;
