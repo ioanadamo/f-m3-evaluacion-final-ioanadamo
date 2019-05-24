@@ -11,9 +11,9 @@ class List extends React.Component {
 		const { people } = this.props;
 		return (
 			<Fragment>
-				{people.map(item => (
-					<li key={item.id}>
-						<Card people={people} />
+				{people.map(person => (
+					<li key={person.id}>
+						<Card person={person} />
 					</li>
 				))}
 			</Fragment>

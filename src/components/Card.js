@@ -6,18 +6,12 @@ class Card extends React.Component {
     this.state = {  }
   } */
 	render() {
-		const { people } = this.props;
+		const { person } = this.props;
 		return (
 			<div>
-				{people.map(item => {
-					return (
-						<div>
-							<img src={item.image} alt={item} />
-							<p>{item.name}</p>
-							<p>{item.house}</p>
-						</div>
-					);
-				})}
+				<img src={person.image} alt={person} />
+				<p>{person.name}</p>
+				<p>{person.house}</p>
 			</div>
 		);
 	}
