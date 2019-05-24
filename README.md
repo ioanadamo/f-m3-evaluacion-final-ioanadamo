@@ -8,17 +8,13 @@ carpeta para cada componente – y en cada carpeta un index js y un style.css
 
 [x]pintar los componentes – una frase para cada uno- tipo soy home
 
-hacer la peticion y guardar en el estado
+[x]hacer la peticion y guardar en el estado
 
-pasar props al componente list para pintar la lista
+[x]pasar props al componente list para pintar la lista
 
-pintar filtros y controlarlos
+[x]pintar filtros y controlarlos
 
-filtrar
-
-pintar los inputs y boton para añadir controlarlos
-
-añadir a la lista lo que se indica en el input
+[x]filtrar
 
 ## Available Scripts
 

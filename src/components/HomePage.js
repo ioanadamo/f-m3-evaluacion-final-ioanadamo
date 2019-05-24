@@ -11,8 +11,22 @@ class Hompage extends React.Component {
 	render() {
 		return (
 			<Fragment>
-				<List people={this.props.people} />
-				<Filters />
+				<header>
+					<h1>Harry Potter Characters</h1>
+				</header>
+				<main>
+					{this.props.isFetching ? (
+						<p>Is loading...</p>
+					) : (
+						<Fragment>
+							<Filters
+								value={this.props.value}
+								handleChange={this.props.handleChange}
+							/>
+							<List value={this.props.value} people={this.props.people} />
+						</Fragment>
+					)}
+				</main>
 			</Fragment>
 		);
 	}

@@ -4,9 +4,20 @@ class Filters extends React.Component {
 	/*  constructor(props) {
     super(props);
     this.state = {  }
-  } */
+	} */
+
 	render() {
-		return <p>Filters</p>;
+		return (
+			<form action="">
+				<label htmlFor="serchPople" />
+				<input
+					id="searchPeople"
+					value={this.props.value}
+					onChange={this.props.handleChange}
+					type="text"
+				/>
+			</form>
+		);
 	}
 }
 

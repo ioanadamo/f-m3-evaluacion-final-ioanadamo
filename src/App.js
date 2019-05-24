@@ -7,8 +7,16 @@ class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			people: []
+			people: {
+				data: [],
+				isFetching: true
+			},
+			filters: {
+				value: ''
+			}
 		};
+
+		this.handleChange = this.handleChange.bind(this);
 	}
 	componentDidMount() {
 		this.fetchCharacters();
@@ -18,20 +26,38 @@ class App extends React.Component {
 			.then(response => response.json())
 			.then(data => {
 				this.setState({
-					people: data.map((item, key) => {
-						return {
-							...item,
-							id: key + 1
-						};
-					})
+					people: {
+						isFetching: false,
+						data: data.map((item, key) => {
+							return {
+								...item,
+								id: key + 1
+							};
+						})
+					}
 				});
 			});
+	}
+
+	handleChange(e) {
+		const inpValue = e.currentTarget.value;
+
+		this.setState({
+			filters: {
+				value: inpValue
+			}
+		});
 	}
 
 	render() {
 		return (
 			<div className="App">
-				<HomePage people={this.state.people} />
+				<HomePage
+					people={this.state.people.data}
+					isFetching={this.state.people.isFetching}
+					value={this.state.filters.value}
+					handleChange={this.handleChange}
+				/>
 				<CardsDetail />
 			</div>
 		);

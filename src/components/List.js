@@ -8,14 +8,18 @@ class List extends React.Component {
     this.state = {  }
   } */
 	render() {
-		const { people } = this.props;
+		const { people, value } = this.props;
 		return (
 			<Fragment>
-				{people.map(person => (
-					<li key={person.id}>
-						<Card person={person} />
-					</li>
-				))}
+				{people
+					.filter(person =>
+						person.name.toUpperCase().includes(value.toUpperCase())
+					)
+					.map(person => (
+						<li key={person.id}>
+							<Card person={person} />
+						</li>
+					))}
 			</Fragment>
 		);
 	}
