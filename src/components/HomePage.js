@@ -11,8 +11,7 @@ class Hompage extends React.Component {
 	render() {
 		return (
 			<Fragment>
-				<p>Homepage</p>
-				<List />
+				<List people={this.props.people} />
 				<Filters />
 			</Fragment>
 		);

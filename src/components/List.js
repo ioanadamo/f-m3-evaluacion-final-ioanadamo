@@ -1,5 +1,5 @@
 import React from 'react';
-import { fragment } from 'react';
+import { Fragment } from 'react';
 import Card from './Card';
 
 class List extends React.Component {
@@ -8,11 +8,15 @@ class List extends React.Component {
     this.state = {  }
   } */
 	render() {
+		const { people } = this.props;
 		return (
-			<fragment>
-				<p>List</p>
-				<Card />
-			</fragment>
+			<Fragment>
+				{people.map(item => (
+					<li key={item.id}>
+						<Card people={people} />
+					</li>
+				))}
+			</Fragment>
 		);
 	}
 }
