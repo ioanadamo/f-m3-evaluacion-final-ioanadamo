@@ -12,19 +12,19 @@ class List extends React.Component {
 		const { people, value } = this.props;
 		return (
 			<Fragment>
-				{people
-					.filter(person =>
-						person.name.toUpperCase().includes(value.toUpperCase())
-					)
-					.map(person => (
-						<ul>
+				<ul>
+					{people
+						.filter(person =>
+							person.name.toUpperCase().includes(value.toUpperCase())
+						)
+						.map(person => (
 							<li key={person.id}>
-								<Link to={`/people/${person.id}`}>
+								<Link to={`/people/${person.id - 1}`}>
 									<Card person={person} />
 								</Link>
 							</li>
-						</ul>
-					))}
+						))}
+				</ul>
 			</Fragment>
 		);
 	}

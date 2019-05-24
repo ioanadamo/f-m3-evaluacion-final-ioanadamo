@@ -9,7 +9,7 @@ class Card extends React.Component {
 		const { person } = this.props;
 		return (
 			<div>
-				<img src={person.image} alt={person} />
+				<img src={person.image} alt={person.name} />
 				<p>{person.name}</p>
 				<p>{person.house}</p>
 			</div>
