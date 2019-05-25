@@ -37,7 +37,9 @@ class CardsDetail extends React.Component {
 							<li>
 								<p>
 									Estado:
-									{person.alive ? 'Alive and kicking' : 'Wondering in the sky'}
+									{person.alive
+										? ' Alive and kicking'
+										: ' Wondering in the sky'}
 								</p>
 							</li>
 						</div>
