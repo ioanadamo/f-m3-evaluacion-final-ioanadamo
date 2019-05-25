@@ -4,22 +4,18 @@ import Card from './Card';
 import { Link } from 'react-router-dom';
 
 class List extends React.Component {
-	/*  constructor(props) {
-    super(props);
-    this.state = {  }
-  } */
 	render() {
 		const { people, value } = this.props;
 		return (
 			<Fragment>
-				<ul>
+				<ul className="characteres__list">
 					{people
 						.filter(person =>
 							person.name.toUpperCase().includes(value.toUpperCase())
 						)
 						.map(person => (
 							<li key={person.id}>
-								<Link to={`/people/${person.id - 1}`}>
+								<Link to={`/people/${person.id}`}>
 									<Card person={person} />
 								</Link>
 							</li>

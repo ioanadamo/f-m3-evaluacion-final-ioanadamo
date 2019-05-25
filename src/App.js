@@ -26,15 +26,16 @@ class App extends React.Component {
 		fetch('http://hp-api.herokuapp.com/api/characters')
 			.then(response => response.json())
 			.then(data => {
+				const newData = data.map((item, key) => {
+					return {
+						...item,
+						id: key
+					};
+				});
 				this.setState({
 					people: {
 						isFetching: false,
-						data: data.map((item, key) => {
-							return {
-								...item,
-								id: key + 1
-							};
-						})
+						data: newData
 					}
 				});
 			});
