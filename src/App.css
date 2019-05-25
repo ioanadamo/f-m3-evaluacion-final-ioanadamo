@@ -1,33 +1,72 @@
-.App {
-  text-align: center;
+body {}
+
+.card__img {
+  height: 230px;
+  width: 180px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.characteres__list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  flex-flow: row wrap;
+  list-style: none;
+  padding: 0px;
+}
+
+.card__link {
+  text-decoration: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.list__card {
+  background-color: rgb(230, 36, 69);
+  width: 180px;
+  height: 330px;
+  margin: 10px;
+  border: 1px solid black;
+  box-shadow: 2px 3px red;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card__name {
+  font-size: 18px;
+  font-weight: 800;
+  font-family: 'Segoe UI';
+  letter-spacing: 0.3px;
+  margin: 5px 0px 40px 0px;
+}
+
+.card__house {
+  font-size: 14px;
+  margin: 0px 0px 5px 0px;
+}
+
+.App {
+  text-align: center;
+  margin: 0;
+  height: 100%;
+  text-align: center;
+}
+
+.detailCard__list-container {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(230, 36, 69);
+  width: 400px;
+  margin: auto;
+  padding: 0px;
+  border: 1px solid black;
+  color: white;
+  box-shadow: 4px 5px red;
+}
+
+.detailCard__wraper {
+  margin-top: 150px;
+}
+
+.detailCard__image {
+  margin-right: 20px;
+  height: 230px;
+  width: 180px;
 }

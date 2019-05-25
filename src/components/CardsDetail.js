@@ -8,19 +8,39 @@ class CardsDetail extends React.Component {
 		const person = people[peopleId];
 
 		return (
-			<div>
+			<div className="detailCard__wraper">
 				{person !== undefined ? (
-					<ul>
-						<li>
-							<p>{person.name}</p>
-							<p>Nacimiento: {person.yearOfBirth}</p>
-							<p>Patronus: {person.patronus}</p>
-							<p>
-								Estado:
-								{person.alive ? 'Alive and kicking' : 'Wondering in the sky'}
-							</p>
-							<img src={person.image} alt={person.name} />
-						</li>
+					<ul className="detailCard__list-container">
+						<img
+							className="detailCard__image"
+							src={person.image}
+							alt={person.name}
+						/>
+
+						<div>
+							<li>
+								<h1>{person.name}</h1>
+							</li>
+							<li>
+								<p>
+									Nacimiento:{' '}
+									{!person.yearOfBirth
+										? 'Eran tiempos dificiles, nadie lo recuerda'
+										: person.yearOfBirth}
+								</p>
+							</li>
+							<li>
+								<p>
+									Patronus: {!person.patronus ? 'No se sabe' : person.patronus}
+								</p>
+							</li>
+							<li>
+								<p>
+									Estado:
+									{person.alive ? 'Alive and kicking' : 'Wondering in the sky'}
+								</p>
+							</li>
+						</div>
 					</ul>
 				) : (
 					<p>Loading details ..</p>

@@ -15,7 +15,7 @@ class List extends React.Component {
 						)
 						.map(person => (
 							<li key={person.id}>
-								<Link to={`/people/${person.id}`}>
+								<Link className="card__link" to={`/people/${person.id}`}>
 									<Card person={person} />
 								</Link>
 							</li>
