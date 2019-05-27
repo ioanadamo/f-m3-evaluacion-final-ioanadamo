@@ -1,5 +1,3 @@
-body {}
-
 .card__img {
   height: 230px;
   width: 180px;
@@ -69,4 +67,12 @@ body {}
   margin-right: 20px;
   height: 230px;
   width: 180px;
+}
+
+.detailCard__death-icon {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  left: 10px;
+  top: 3px;
 }

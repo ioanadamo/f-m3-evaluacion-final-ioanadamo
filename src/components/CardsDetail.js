@@ -1,4 +1,6 @@
 import React from 'react';
+import IconDeath from '../images/download.png';
+import PropTypes from 'prop-types';
 
 class CardsDetail extends React.Component {
 	render() {
@@ -6,6 +8,7 @@ class CardsDetail extends React.Component {
 		const { peopleId } = match.params;
 
 		const person = people[peopleId];
+		console.log(peopleId);
 
 		return (
 			<div className="detailCard__wraper">
@@ -35,12 +38,16 @@ class CardsDetail extends React.Component {
 								</p>
 							</li>
 							<li>
-								<p>
-									Estado:
-									{person.alive
-										? ' Alive and kicking'
-										: ' Wondering in the sky'}
-								</p>
+								Estado:
+								{person.alive ? (
+									<p> Alive and kicking</p>
+								) : (
+									<img
+										className="detailCard__death-icon"
+										src={IconDeath}
+										alt="death-icon"
+									/>
+								)}
 							</li>
 						</div>
 					</ul>
@@ -51,5 +58,10 @@ class CardsDetail extends React.Component {
 		);
 	}
 }
+
+CardsDetail.propTypes = {
+	people: PropTypes.array.isRequired,
+	match: PropTypes.object.isRequired
+};
 
 export default CardsDetail;

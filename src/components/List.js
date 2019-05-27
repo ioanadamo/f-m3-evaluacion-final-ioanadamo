@@ -2,6 +2,7 @@ import React from 'react';
 import { Fragment } from 'react';
 import Card from './Card';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class List extends React.Component {
 	render() {
@@ -25,5 +26,9 @@ class List extends React.Component {
 		);
 	}
 }
+List.propTypes = {
+	value: PropTypes.string.isRequired,
+	people: PropTypes.array.isRequired
+};
 
 export default List;

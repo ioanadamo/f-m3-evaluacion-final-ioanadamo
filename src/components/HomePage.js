@@ -2,8 +2,9 @@ import React from 'react';
 import { Fragment } from 'react';
 import List from './List';
 import Filters from './Filters';
+import PropTypes from 'prop-types';
 
-class Hompage extends React.Component {
+class Homepage extends React.Component {
 	render() {
 		return (
 			<Fragment>
@@ -27,5 +28,11 @@ class Hompage extends React.Component {
 		);
 	}
 }
+Homepage.propTypes = {
+	isFetching: PropTypes.bool.isRequired,
+	value: PropTypes.string.isRequired,
+	people: PropTypes.array.isRequired,
+	handleChange: PropTypes.func.isRequired
+};
 
-export default Hompage;
+export default Homepage;
